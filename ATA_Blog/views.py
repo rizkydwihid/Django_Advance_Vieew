@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from .models import Blog
-from .form import form
+from .form import PostForm
 
 # Create your views here.
 def pageblog(request):
@@ -18,3 +18,7 @@ def form(request):
     else:
         form = PostForm()
     return render(request, 'blogpage/form_page.html', {'form': form})
+
+def detail_post(request, post_id):
+    post_num = get_list_or_404(Blog, id=post_id)
+    return render(request, 'blogpage/blog2.html', {'blog': post_num})

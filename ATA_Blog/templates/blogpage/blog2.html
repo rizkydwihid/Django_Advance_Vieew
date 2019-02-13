@@ -16,9 +16,9 @@
                 <div class="col-md-12">
                     <h4>{{ data.judul }}</h4><br></div>
                 </div>
-                <div class="col-md-12"><h5>{{ data.isi|truncatewords:25 }}
+                <div class="col-md-12"><h5>{{ data.isi }}
                 </h5>
-                <a href="{% url 'detail_post' post_id=data.id %}">Baca Selengkapnya</a>
+                <a href="{% url 'blog' %}">Lebih Singkat</a>
                 <br></div><br>
                 </div>
         </div>
