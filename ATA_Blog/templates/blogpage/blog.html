@@ -6,22 +6,27 @@
 {% for data in blog %}
         <div class="container-fluid col-md-6">
                 <div class="row">
-                    <div class="col-md-12 center">
-                        <img src="{% static 'img/kendala-sepulsa.jpg' %}">
+                    <div class="col-md-12 center imeg">
+                        <img src="{{ data.gambar.url }}">
                     </div>
                 </div>
-            <div class="container-fluid col-md-6">
-                <div class="row">
-                    <div class="col-md-12 center">
-                <div class="col-md-12">
+        </div>
+        <div class="container-fluid col-md-6">
+            <div class="row">
+                <div class="col-md-12 center">
+                    <div class="col-md-12">
+                    <h5>{{ data.created_at }}</h5><br></div>
+                </div>
+                <div class="col-md-12 center">
+                    <div class="col-md-12">
                     <h4>{{ data.judul }}</h4><br></div>
                 </div>
-                <div class="col-md-12"><h5>{{ data.isi|truncatewords:25 }}
+            <div class="col-md-12"><h5>{{ data.isi|truncatewords:25 }}
                 </h5>
                 <a href="{% url 'detail_post' post_id=data.id %}">Baca Selengkapnya</a>
                 <br></div><br>
                 </div>
         </div>
-        </div>
+       
         {% endfor %}
         {% endblock %}
