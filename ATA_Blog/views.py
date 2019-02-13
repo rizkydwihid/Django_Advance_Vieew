@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Blog
+from .form import form
 
 # Create your views here.
 def pageblog(request):
